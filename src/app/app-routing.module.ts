@@ -1,5 +1,7 @@
+import { OrderComponent } from './components/order/order.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
 
 const routes: Routes = [
   {
@@ -8,9 +10,13 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'orders',
     pathMatch: 'full'
   },
+  {
+    path: 'orders',
+    component: OrderComponent
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,221 @@
+
+.cuerpo {
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+main {
+    font-size: 62.5%;
+    //font-size: 11px; /* 1 rem = 10 px */
+    //display: grid;
+    padding: 2rem;
+    margin: 5rem 5%;
+
+    /*Gradient generator*/
+    background: rgba(98,125,77,1);
+    background: -moz-linear-gradient(-45deg, rgba(98,125,77,1) 0%, rgba(63,120,163,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(63,120,163,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(98,125,77,1) 0%, rgba(63,120,163,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(98,125,77,1) 0%, rgba(63,120,163,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(98,125,77,1) 0%, rgba(63,120,163,1) 100%);
+    background: linear-gradient(135deg, rgba(98,125,77,1) 0%, rgba(63,120,163,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#3f78a3', GradientType=1 );
+
+    /*box shadow*/
+    -webkit-box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.39);
+    box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.39);
+
+}
+
+
+/*
+* FONTS
+*/
+
+* {
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+}
+
+
+
+/*
+* principal title style
+*/
+
+.logo {
+  height: 15vh;
+  width: 11vw;
+  background-image: url("../../img/maick.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.head-order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+* search div style
+*/
+
+
+
+.search-div {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    font-weight: bold;
+    row-gap: .5rem;
+}
+
+
+
+.input-text {
+    border-radius: .2rem;
+    text-decoration: none;
+    background-color: #f2f2f2;
+    color: #000;
+    border: none;
+    padding: .4rem;
+    width: 5rem;
+}
+
+.input-detalle{
+  width: 80%;
+}
+
+/*
+* add details style
+*/
+
+.add-detalles, .add-order{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  /*box shadow*/
+  -webkit-box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.39);
+  -moz-box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.39);
+  box-shadow: 0px 10px 11px 1px rgba(0,0,0,0.39);
+}
+
+/*
+* button style
+*/
+
+.boton{
+    background-color: antiquewhite;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: .2rem;
+    text-align: center;
+    font-weight: bold;
+    height: 100%;
+    padding: .4rem;
+    border: none;
+}
+
+.botones-agregar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
+  margin: 2rem 2rem;
+  column-gap: 2rem;
+}
+
+
+/*
+* title data styles
+*/
+
+.data-order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+
+}
+
+.data-title{
+    color: #000;
+}
+
+.data-order .data{
+    display: flex;
+}
+
+
+/*
+* Table styles
+*/
+
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+
+    width: 100%;
+}
+
+table .table-titles, th{
+    background-color: antiquewhite;
+    font-weight: bold;
+    border: .5px solid #000;
+}
+
+table .table-data {
+    background-color: aliceblue;
+    text-align: center;
+}
+
+
+tr:nth-child(even){
+    background-color: #f2f2f2
+}
+
+/*
+* media query
+*/
+
+@media (min-width: 900px) {
+
+    main {
+        padding: 5rem;
+        margin: 5rem 20%;
+    }
+    .search-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1rem;
+    }
+
+    .data-order{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        font-weight: bold;
+
+    }
+}

@@ -1,0 +1,117 @@
+<div class="cuerpo">
+  <main>
+
+    <div class="head-order">
+        <div class="logo"></div>
+
+        <h1>Búsqueda de orden</h1>
+    </div>
+
+    <div class="search-div">
+      <label >ID ORDEN</label>
+      <input class="input-text" type="number" id="input-text" [(ngModel)]="orderDto.id">
+      <button class="boton" type="button" (click)="getOrderById()" >BUSCAR</button>
+    </div>
+
+
+    <div class="data-order">
+
+      <div class="data">
+        <p class="data-title">CLIENTE:</p>
+        <p>{{orderDto.client}}</p>
+      </div>
+
+      <div class="data">
+        <p class="data-title">N ORDEN:</p>
+        <p>{{orderDto.number}}</p>
+      </div>
+
+      <div class="data">
+        <p class="data-title">TOTAL:</p>
+        <p>{{orderDto.total}}</p>
+      </div>
+
+    </div>
+
+    <div style="overflow-x: auto;">
+      <p-table [value]="orderDto.details" [paginator]="true" [rows]='5' paginatorPosition="top" [lazy]="true" >
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>N</th>
+            <th>DETALLE</th>
+            <th>CANTIDAD</th>
+            <th>PRECIO</th>
+            <th>TOTAL</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-detail>
+          <tr>
+            <td>{{detail.id}}</td>
+            <td>{{detail.detail}}</td>
+            <td>{{detail.cantidad}}</td>
+            <td>{{detail.precio_unitario}}</td>
+            <td>{{detail.total_detail}}</td>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="5" style="text-align: center;">
+                No hay detalles para esta orden
+            </td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+    </div>
+
+    <div class="botones-agregar">
+      <button ion-button full round (click)="onOrderClick()" class="boton">+ Orden</button>
+      <button ion-button full round (click)="onDetailsClick()" class="boton">+ Detalles</button>
+    </div>
+    <div class="add-orden">
+
+    </div>
+
+    <div *ngIf="buttonOrderClicked" class="add-order">
+      <div class="search-div">
+        <p>Nombre del cliente</p>
+        <input class="input-text input-detalle" type="text" [(ngModel)]="orderDto.client">
+      </div>
+
+      <div class="search-div">
+        <p>Numero de orden</p>
+        <input class="input-text" type="text" [(ngModel)]="orderDto.number">
+      </div>
+
+      <div class="search-div">
+        <button class="boton" (click)="setOrder()" >Agregar</button>
+      </div>
+
+    </div>
+
+    <div *ngIf="buttonClicked" class="add-detalles">
+      <div class="search-div">
+        <p>Detalle</p>
+        <input class="input-text input-detalle" type="text" [(ngModel)]="orderDetailsDto.detail">
+      </div>
+
+      <div class="search-div">
+        <p>Cantidad</p>
+        <input class="input-text" type="number" [(ngModel)]="orderDetailsDto.cantidad">
+      </div>
+      <div class="search-div">
+        <p>Precio unitario</p>
+        <input class="input-text" type="text" [(ngModel)]="orderDetailsDto.precio_unitario">
+      </div>
+
+      <div class="search-div">
+        <button class="boton" (click)="setDetailsById()">Agregar</button>
+      </div>
+
+    </div>
+
+  </main>
+</div>
